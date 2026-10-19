@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="和歌山のイベントを企画から現場運営まで。株式会社山野企楽のイベント事業。音響・照明・ステージ設営・イベント運営をサポートします。">
+<title>株式会社山野企楽｜イベント事業</title>
+<style>
+:root {
+  --navy: #102b49;
+  --blue: #174c79;
+  --yellow: #f4ca45;
+  --white: #fff;
+  --light: #f4f7fa;
+  --text: #24354a;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Yu Gothic", "Meiryo", sans-serif;
+  line-height: 1.9;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+.container { width: min(1120px, 90%); margin: auto; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,.97);
+  box-shadow: 0 2px 14px #102b4910;
+}
+.header-inner {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.logo { color: var(--navy); font-weight: 800; line-height: 1.4; }
+.logo small { display: block; font-size: 11px; letter-spacing: 2px; }
+nav { display: flex; gap: 22px; font-size: 13px; font-weight: bold; }
+nav a:hover { color: var(--blue); }
+.hero {
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg, #071c32df 0%, #071c3280 55%, #071c3220 100%),
+    url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=2000&q=85")
+    center 55% / cover;
+}
+.hero-content { padding: 85px 0; }
+.eyebrow { color: var(--yellow); font-weight: bold; letter-spacing: 3px; font-size: 12px; }
+h1 { font-size: clamp(32px, 5vw, 58px); line-height: 1.5; margin: 18px 0; }
+.hero p { max-width: 650px; font-size: 15px; }
+.button {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--navy);
+  padding: 12px 25px;
+  font-weight: bold;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+section { padding: 82px 0; }
+.section-title { text-align: center; margin: 0 0 12px; color: var(--navy); font-size: 30px; }
+.section-lead { text-align: center; margin: 0 auto 42px; max-width: 720px; color: #617083; }
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.service {
+  padding: 27px;
+  background: var(--light);
+  border-top: 3px solid var(--yellow);
+}
+.service .number { color: var(--blue); font-weight: 800; font-size: 13px; }
+.service h3 { color: var(--navy); margin: 8px 0; }
+.service p { font-size: 14px; margin-bottom: 0; }
+.school {
+  background: #edf4f9;
+}
+.school-card {
+  background: white;
+  border-radius: 8px;
+  padding: clamp(25px, 5vw, 55px);
+  border-left: 5px solid var(--yellow);
+}
+.school-card h2 { color: var(--navy); margin-top: 0; }
+.school-card p { margin-bottom: 0; }
+.results {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+.result-card {
+  overflow: hidden;
+  background: white;
+  border: 1px solid #dce4eb;
+}
+.result-card img { width: 100%; height: 230px; object-fit: cover; display: block; }
+.result-body { padding: 24px; }
+.result-body h3 { color: var(--navy); margin: 0 0 8px; }
+.tag {
+  display: inline-block;
+  padding: 3px 9px;
+  background: #edf4f9;
+  color: var(--blue);
+  font-size: 12px;
+  margin: 3px 3px 3px 0;
+}
+.note { color: #667589; font-size: 13px; }
+.company { background: var(--light); }
+.company-table { width: 100%; border-collapse: collapse; background: white; }
+.company-table th, .company-table td {
+  padding: 18px;
+  border-bottom: 1px solid #e0e7ed;
+  text-align: left;
+}
+.company-table th { width: 30%; color: var(--navy); }
+.contact { background: var(--navy); color: white; }
+.contact .section-title { color: white; }
+.contact .section-lead { color: #d4dfeb; }
+.contact-card {
+  background: white;
+  color: var(--text);
+  max-width: 760px;
+  margin: auto;
+  padding: clamp(22px, 5vw, 45px);
+  border-radius: 8px;
+}
+.contact-card label { display: block; font-weight: bold; margin: 15px 0 5px; }
+.contact-card input, .contact-card textarea, .contact-card select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5df;
+  border-radius: 4px;
+  font: inherit;
+}
+.contact-card textarea { min-height: 130px; }
+.contact-card button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+.form-note { font-size: 12px; color: #667589; }
+footer { background: #091b2d; color: white; padding: 35px 0; font-size: 12px; }
+.footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+@media (max-width: 760px) {
+  .header-inner { padding: 14px 0; align-items: flex-start; flex-direction: column; gap: 8px; }
+  nav { gap: 14px; flex-wrap: wrap; font-size: 12px; }
+  .hero { min-height: 500px; background-position: 58% center; }
+  .hero-content { padding: 65px 0; }
+  .hero p { font-size: 14px; }
+  section { padding: 58px 0; }
+  .section-title { font-size: 25px; }
+  .services { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .service { padding: 17px; }
+  .service p { font-size: 13px; }
+  .results { grid-template-columns: 1fr; }
+  .result-card img { height: 210px; }
+  .company-table th, .company-table td { padding: 12px 9px; font-size: 13px; }
+}
+@media (max-width: 420px) {
+  nav { gap: 10px; }
+  .services { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a class="logo" href="#top">
+      株式会社 山野企楽
+      <small>EVENT PLANNING & PRODUCTION</small>
+    </a>
+    <nav>
+      <a href="#service">サービス</a>
+      <a href="#school">学校・地域の方へ</a>
+      <a href="#results">実績</a>
+      <a href="#company">会社概要</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="container hero-content">
+      <div class="eyebrow">EVENTS MAKE CONNECTIONS</div>
+      <h1>和歌山のイベントを、<br>企画から現場運営まで。</h1>
+      <p>
+        地域のお祭りから、高校・大学の文化祭・学園祭、企業イベント、野外ライブまで。
+        音響・照明、ステージ・会場設営、出演者の手配など、
+        企画から当日の運営まで総合的にサポートします。
+      </p>
+      <a class="button" href="#contact">イベントの相談をする →</a>
+    </div>
+  </section>
+
+  <section id="service">
+    <div class="container">
+      <h2 class="section-title">サービス</h2>
+      <p class="section-lead">イベントの規模やご予算、目的に合わせて、必要な内容をご提案します。</p>
+      <div class="services">
+        <article class="service">
+          <div class="number">01 / SOUND</div>
+          <h3>音響</h3>
+          <p>ライブ、式典、発表会など、会場や内容に合わせた音響機材とオペレーションを提供します。</p>
+        </article>
+        <article class="service">
+          <div class="number">02 / LIGHTING</div>
+          <h3>照明</h3>
+          <p>ステージを彩る演出から、出演者を見やすく照らす明かりまで対応します。</p>
+        </article>
+        <article class="service">
+          <div class="number">03 / STAGE</div>
+          <h3>ステージ・会場設営</h3>
+          <p>ステージ、テント、客席など、イベントに必要な会場づくりをサポートします。</p>
+        </article>
+        <article class="service">
+          <div class="number">04 / ARTISTS</div>
+          <h3>出演者の手配</h3>
+          <p>イベントの趣旨やご希望に合わせ、出演者やパフォーマーの手配をお手伝いします。</p>
+        </article>
+        <article class="service">
+          <div class="number">05 / PLANNING</div>
+          <h3>イベントの企画・制作</h3>
+          <p>企画段階から相談しながら、内容や会場構成、必要な準備を組み立てます。</p>
+        </article>
+        <article class="service">
+          <div class="number">06 / OPERATION</div>
+          <h3>当日の進行・運営</h3>
+          <p>進行管理やスタッフ配置など、当日をスムーズに進めるための運営を支えます。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="school" id="school">
+    <div class="container">
+      <div class="school-card">
+        <div class="eyebrow">FOR SCHOOLS & COMMUNITIES</div>
+        <h2>文化祭・学園祭・地域イベントのご担当者さまへ</h2>
+        <p>
+          高校・大学の文化祭や学園祭、軽音楽部のライブ、ダンス・発表会、
+          地域のお祭りなどもご相談ください。会場やご予算、実施したい内容に合わせて、
+          必要な機材やスタッフ、当日の進行をご提案します。
+          音響のみ・照明のみなど、一部のご依頼も承ります。
+          企画がまだ固まっていない段階でも、お気軽にお問い合わせください。
+        </p>
+        <a class="button" href="#contact">まずは気軽に相談する →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="container">
+      <h2 class="section-title">イベント実績</h2>
+      <p class="section-lead">イベントの企画・運営を通じて培った経験を、次の現場へ。</p>
+      <div class="results">
+        <article class="result-card">
+          <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1000&q=80" alt="ライブステージのイメージ">
+          <div class="result-body">
+            <h3>KISHU ROCK IMPACT</h3>
+            <span class="tag">運営</span><span class="tag">音響</span>
+            <span class="tag">照明</span><span class="tag">ステージ設営</span>
+            <p class="note">開催年・会場・正式な担当内容は確認後に掲載します。</p>
+          </div>
+        </article>
+        <article class="result-card">
+          <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1000&q=80" alt="野外イベントのイメージ">
+          <div class="result-body">
+            <h3>NEXT HEROES FES</h3>
+            <span class="tag">運営</span><span class="tag">音響</span>
+            <span class="tag">照明</span><span class="tag">ステージ設営</span>
+            <p class="note">開催年：2026年（予定情報）／会場：和歌山城西の丸広場。実施情報を確認後に確定します。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="company" id="company">
+    <div class="container">
+      <h2 class="section-title">会社概要</h2>
+      <p class="section-lead">地域と人をつなぎ、イベントの力を。</p>
+      <table class="company-table">
+        <tr><th>会社名</th><td>株式会社山野企楽</td></tr>
+        <tr><th>事業内容</th><td>イベントの企画・制作・運営、音響・照明、ステージ・会場設営など</td></tr>
+        <tr><th>関連施設</th><td>CLUB GATEの運営</td></tr>
+        <tr><th>所在地・連絡先</th><td>確認後に掲載</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">お問い合わせ</h2>
+      <p class="section-lead">
+        イベントのご相談・お見積もりはこちら。<br>
+        日程・会場・ご予算が未定でも、お気軽にご相談ください。
+      </p>
+      <div class="contact-card">
+        <form id="contactForm">
+          <label for="organization">学校名・団体名 *</label>
+          <input id="organization" name="organization" required placeholder="例）〇〇高校、〇〇実行委員会">
+          <label for="person">担当者名 *</label>
+          <input id="person" name="person" required placeholder="例）山田 太郎">
+          <label for="email">メールアドレス *</label>
+          <input id="email" name="email" type="email" required placeholder="返信先のメールアドレス">
+          <label for="phone">電話番号</label>
+          <input id="phone" name="phone" type="tel" placeholder="任意">
+          <label for="date">開催予定日</label>
+          <input id="date" name="date" placeholder="未定でもOK">
+          <label for="venue">会場</label>
+          <input id="venue" name="venue" placeholder="未定でもOK">
+          <label for="budget">ご予算</label>
+          <input id="budget" name="budget" placeholder="未定でもOK">
+          <label for="details">相談内容 *</label>
+          <textarea id="details" name="details" required placeholder="イベントの内容や、相談したいことをご記入ください。"></textarea>
+          <p class="form-note">※現在は入力画面の仮設置です。送信機能は、受信先などの設定後に有効になります。</p>
+          <button class="button" type="button" onclick="alert('お問い合わせフォームは現在準備中です。送信機能の設定後にご利用いただけます。')">お問い合わせフォーム（準備中）</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div><strong>株式会社 山野企楽</strong><br>EVENT PLANNING & PRODUCTION</div>
+    <div>イベントのご相談はお気軽にお問い合わせください。</div>
+    <div>© 株式会社山野企楽</div>
+  </div>
+</footer>
+
+</body>
+</html>
